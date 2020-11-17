@@ -1,0 +1,24 @@
+# permissions for end users to edit cpucacheds.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: cpucached-editor-role
+rules:
+- apiGroups:
+  - cache.example.com
+  resources:
+  - cpucacheds
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - cache.example.com
+  resources:
+  - cpucacheds/status
+  verbs:
+  - get

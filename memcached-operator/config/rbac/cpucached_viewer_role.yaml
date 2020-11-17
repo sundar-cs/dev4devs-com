@@ -1,0 +1,20 @@
+# permissions for end users to view cpucacheds.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: cpucached-viewer-role
+rules:
+- apiGroups:
+  - cache.example.com
+  resources:
+  - cpucacheds
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - cache.example.com
+  resources:
+  - cpucacheds/status
+  verbs:
+  - get
